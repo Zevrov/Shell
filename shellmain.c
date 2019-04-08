@@ -19,11 +19,10 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		putchar('>');
-		putchar(' ');
+		write(STDERR_FILENO, "$ ", 2);
 		charCount = getline(&buffer, &buffsize, stdin);
 		if (charCount < 0)
-			return (-1);
+			break;
 		if (buffer[charCount - 1] == '\n')
 			buffer[charCount - 1] = '\0';
 		newpid = fork();
@@ -37,6 +36,8 @@ int main(int argc, char *argv[])
 		else
 			wait(&status);
 	}
+	if (charCount < 0)
+		write(STDERR_FILENO, "\n", 1);
 	free(buffer);
 	return (0);
 }
