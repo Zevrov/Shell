@@ -1,5 +1,5 @@
-#ifndef _SHELL.H_
-#DEFINE _SHELL.H_
+#ifndef _SHELLH_
+#DEFINE _SHELLH_
 
 #include <sys/wait.h>
 #include <sys/types.h>
@@ -8,4 +8,4 @@
 #include <stdio.h>
 #include <string.h>
 
-#endif /* shell.h */
+#endif /* shellh */
