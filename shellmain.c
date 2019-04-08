@@ -17,9 +17,9 @@ void shloop(void)
 
 	do {
 		printf("< ");
-		commandline = lsh_read_line();
-		args = lsh_split_line(commandline);
-		stat = lsh_execute(args);
+		commandline = shreadline();
+		args = shplitline(commandline);
+		stat = shexecute(args);
 		free(commandline);
 		free(args);
 	} while (status);
