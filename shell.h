@@ -8,10 +8,4 @@
 #include <stdio.h>
 #include <string.h>
 
-void sloop(void);
-int shlaunch(char **args);
-int shexecute(char **args);
-int shreadline(void);
-char **shplitline(char *line);
-
 #endif /* shell */
