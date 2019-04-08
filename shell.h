@@ -1,5 +1,5 @@
-#ifndef _SHELLH_
-#DEFINE _SHELLH_
+#ifndef _SHELL_
+#DEFINE _SHELL_
 
 #include <sys/wait.h>
 #include <sys/types.h>
@@ -14,4 +14,4 @@ int shexecute(char **args);
 int shreadline(void);
 char **shplitline(char *line);
 
-#endif /* shellh */
+#endif /* shell */
