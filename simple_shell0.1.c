@@ -17,10 +17,10 @@ void shloop(void)
 
 	do {
 		printf("< ");
-		line = lsh_read_line();
-		args = lsh_split_line(line);
+		commandline = lsh_read_line();
+		args = lsh_split_line(commandline);
 		stat = lsh_execute(args);
-		free(line);
+		free(commandline);
 		free(args);
 	} while (status);
 }
