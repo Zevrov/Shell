@@ -1,1 +1,22 @@
+.TH SIMPLE SHELL 1			2019
+.SH NAME
+simple shell\- reads commands it receives from the user sends them to the kernel to be executed.
+.SH SYNOPSIS
+.B simple shell
+[command_file [arguement]]
+[command_string] [option]
+[command_string] [command_name [argument]]
+.SH DESCRIPTION
+.B simple shell
+Reads and executes configuration files. Reads commands from STDIN.  Executes commands from STDIN. 
+.SH OPTIONS
 
+.TP
+
+.BR
+
+.SH OPERANDS
+
+.TP
+
+.BR
