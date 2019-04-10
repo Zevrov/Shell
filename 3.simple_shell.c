@@ -1,9 +1,4 @@
-#include <sys/wait.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "shell.h"
 
 /**
  * vect_array - tokenize string and return vector array
@@ -19,6 +14,10 @@ char **vect_array(char *str, ssize_t n)
 	int tokes = 1, index = 0;
 
 	buffer = malloc(n + 1);
+	if (buffer == NULL)
+	{
+		return (NULL);
+	}
 	strncpy(buffer, str, n + 1);
 	bufPointer = buffer;
 	while (*bufPointer)
@@ -28,10 +27,18 @@ char **vect_array(char *str, ssize_t n)
 		bufPointer++;
 	}
 	args = malloc(sizeof(char *) * (tokes + 1));
+	if (args == NULL)
+	{
+		return (NULL):
+	}
 	token = strtok(buffer, delim);
 	while (token)
 	{
 		args[index] = malloc(strlen(token) + 1);
+		if (args == NULL)
+		{
+			return (NULL);
+		}
 		strncpy(args[index], token, strlen(token) + 1);
 		token = strtok(NULL, delim);
 		index++;
@@ -40,3 +47,4 @@ char **vect_array(char *str, ssize_t n)
 	args[index] = NULL;
 	free(buffer);
 	return (args);
+}
