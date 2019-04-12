@@ -1,22 +1,53 @@
-.TH SIMPLE SHELL 1			2019
+.TH "SIMPLE SHELL" 1 "10 April 2019" "Simple Shell"
 .SH NAME
-simple shell\- reads commands it receives from the user sends them to the kernel to be executed.
+simple shell \- reads commands received from user, sends commands to kernel to be executed.
 .SH SYNOPSIS
-.B simple shell
-[command_file [arguement]]
-[command_string] [option]
-[command_string] [command_name [argument]]
+[\fIoption name\fI [\fIcommand file\fI]
+.TP
+[\fIoption name\fI] \fIcommand string\fI [
+.TP
+[\fIcommand\fI]
 .SH DESCRIPTION
 .B simple shell
-Reads and executes configuration files. Reads commands from STDIN.  Executes commands from STDIN. 
+the standard command interpreter.  This version has many feature which make it appear similiar to Linux Shell. It is not a Linux clone. 
+.SH Overview
+Simple Shell reads lines from standard input of file.  It interprets the lines into executable command and sends to the kernel.  The kernel executes the commands. Commands can come from a file then executed in the shell or typed into running shell. 
 .SH OPTIONS
-
+Single letter options are derived from built-in commands.
 .TP
-
+.BR \ pwd \fR
+Print Working Directory is an environmentatl variable. It sotres the path of the curreent directory. It is a built-in command. Use this command to tell you what directory you are currently in. The path starts at the root. Example of the user directory: "home/username"
+.TP
+.BR \ ls -l \fR
+ls is the list command; -l is the option.  This command lists the computer files in the long format.  Included in this list are the the file names, directory, permissions, specifies the number of links, owner of the file, siz of file in bytes and date of last modification.
+.TP
+.BR \ ls \fR
+List command. It lists the files in your current directory.
+.TP
+.BR \ cal \fR
+Calendar command. It shows the current months calendar.
+.TP
+.BR \ exit \fR
+Command used to exit the shell where it is running. It takes one parameter; n. When n is not present it returns sdtatus of last executed command.  Example with parameter: exit [n]
+.TP
+.BR \ env \fR
+Command used to print environment variables. This is a built-in function that prints the current environment.  
+.TP
 .BR
 
-.SH OPERANDS
-
+.SH HELPER FUNCTIONS
+.B _strlen, _strncopy, _strcpy, strcmp
 .TP
-
 .BR
+
+.SH SEE ALSO
+.BR sh(1)
+
+.SH HISTORY
+Simple Shell created April 2019 a collaborative project from Wolf Hopkins and Mia L. Morton. 
+.BR
+
+.SH BUGS
+This is the first incarnation of Simple Shell. If any bugs please send info to https://github.com/Zevrov or https://github.com/DracoMindz.
+.BR
+
