@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 		charCount = getline(&buffer, &buffsize, stdin);
 		if (charCount < 0)
 			break;
+		if (stdin == "exit")
+			_exit();
 		if (buffer[charCount - 1] == '\n')
 			buffer[charCount - 1] = '\0';
 		cmd = vect_array(buffer, charCount);

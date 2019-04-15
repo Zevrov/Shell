@@ -8,4 +8,5 @@
 #include <stdio.h>
 #include <string.h>
 
+int _exit(void);
 #endif /* shell */
