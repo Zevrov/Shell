@@ -19,5 +19,6 @@ char *_strncpy(char *dest, char *src, int n);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *a);
 void sighandle(int n__attribute__((unused)));
+void exitShell(char *buffer);
 
 #endif /* shell */
