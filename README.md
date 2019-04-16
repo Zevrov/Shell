@@ -24,3 +24,4 @@ Simple Shell was built using C language.
 
 ## Authors and acknowledgement
 Simple Shell is a project developed by Wolf Hopkins and Mia L. Morton.
+https://github.com/Zevrov/simple_shell/tree/master
