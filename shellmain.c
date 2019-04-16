@@ -6,7 +6,7 @@
 * Return: always 0
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[], char *envp[])
 {
 	char *buffer = NULL;
 	size_t buffsize = 0;
@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
 	}
 	if (charCount < 0)
 		write(STDERR_FILENO, "\n", 1);
-	while (cdm[index])
+	free(buffer);
+	while (cmd[index])
 	{
 		free(cmd[index]);
 		index++;
@@ -48,4 +49,4 @@ int main(int argc, char *argv[])
 	free(cmd);
 	return (0);
 }
- 
+

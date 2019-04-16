@@ -8,4 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 
+char **vect_array(char *str, ssize_t n);
+
 #endif /* shell */
