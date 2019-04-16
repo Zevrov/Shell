@@ -9,6 +9,6 @@
 #include <string.h>
 
 char **vect_array(char *str, ssize_t n);
-void exitShell(char *buffer);
+void exitSH(char *buffer);
 
 #endif /* shell */

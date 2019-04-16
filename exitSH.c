@@ -3,7 +3,7 @@
  * _exit - exits the shell
  * @args: the argument for exit
  */
-void exitShell(char *buffer)
+void exitSH(char *buffer)
 {
 	char *x = "exit";
 
