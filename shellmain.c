@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	size_t buffsize = 0;
 	pid_t newpid;
 	ssize_t charCount;
-	int status;
+	int status, index = 0;
 	char **cmd;
 
 	if (argc < 1)
@@ -40,7 +40,11 @@ int main(int argc, char *argv[])
 	}
 	if (charCount < 0)
 		write(STDERR_FILENO, "\n", 1);
-	free(buffer);
+	while (cdm[index])
+	{
+		free(cmd[index]);
+		index++;
+	}
 	free(cmd);
 	return (0);
 }

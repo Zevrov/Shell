@@ -22,14 +22,14 @@ char **vect_array(char *str, ssize_t n)
 	bufPointer = buffer;
 	while (*bufPointer)
 	{
-		if (*buffPointer == ' ')
+		if (*bufPointer == ' ')
 			tokes++;
 		bufPointer++;
 	}
 	args = malloc(sizeof(char *) * (tokes + 1));
 	if (args == NULL)
 	{
-		return (NULL):
+		return (NULL);
 	}
 	token = strtok(buffer, delim);
 	while (token)
