@@ -64,7 +64,7 @@ Return value of the last executed command. Otherwise no return value.
 .BR
 
 .SH HELPER FUNCTIONS
-.B _strlen, _strncopy, _strcpy, _strcmp, _strndupp, _puts, _calloc, _putchar 
+.B _strlen, _strncopy, _strcpy, _strcmp, _strndupp, _puts, _calloc, _putchar
 .TP
 .BR
 
@@ -72,10 +72,17 @@ Return value of the last executed command. Otherwise no return value.
 .BR sh(1), man7.org sh(1P), manpages.debian.org.
 
 .SH HISTORY
-Simple Shell created April 2019 a collaborative project from Wolf Hopkins and Mia L. Morton. 
+Simple Shell created April 2019 a collaborative project from Wolf Hopkins and Mia L. Morton. We preferred to write our own Helper Functins for portability.
+.BR
+
+.SH AUTHORS
+Wolf Hopkins
+wolf.hopkins@holbertonschool.com
+
+Mia L. Morton
+mia.morton@holbertonschool.com
 .BR
 
 .SH BUGS
 This is the first incarnation of Simple Shell. If any bugs please send info to https://github.com/Zevrov or https://github.com/DracoMindz.
 .BR
-
