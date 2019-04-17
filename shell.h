@@ -9,9 +9,9 @@
 #include <string.h>
 #include <signal.h>
 
-typedef struct globals
+typedef struct global
 {
-	char *command;
+	char *command = NULL;
 } globals;
 
 char **vect_array(char *str, ssize_t n);

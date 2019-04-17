@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[], char *envp[])
 {
-	/*char *buffer = NULL;*/
+	char *buffer = NULL;
 	size_t buffsize = 0;
 	pid_t newpid;
 	ssize_t charCount;

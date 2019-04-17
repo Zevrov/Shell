@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "shell.h"
 
 /**
@@ -16,32 +11,22 @@ char *pathfinder(char **env)
 {
 	int i, strcheck;
 	unsigned int n = 0, index = 0;
-	char *p2;
-	char *pathenv;
-	char *pathtokenptr;
-	char *pathpointer = *env;;
-	char *str = "PATH=";
+	char *p2, *pathenv, *pathtokenptr, *pathpointer = *env, *str = "PATH=";
 
 /*get path*/
 	for (i = 0; pathpointer != NULL; pathpointer++)
 	{
 		strcheck = _strncmp(pathpointer, str, 5);
-		printf("%s, %s, %d\n");
-
 		if (strcheck == 0)
-		{
 			break;
-		}
 	}
 /*pointer pointing to position 6 of Path string*/
 	pathpointer = (pathpointer + 5);
 
 /*insert path in buffer*/
-	pathenv = malloc(sizeof(char str) * (strlen(pathpointer) + 1));
+	pathenv = malloc(sizeof(str) * (strlen(pathpointer) + 1));
 	if (pathenv == NULL)
-	{
-		return (-1);
-	}
+		return (NULL);
 	while (pathpointer != NULL)
 	{
 		pathenv[n] = pathpointer[n];
@@ -58,9 +43,7 @@ char *pathfinder(char **env)
 		_strncat(p2, globals.command, _strlen(globals.command));
 		p2[strlen(_strlen(globals.command) + _strlen(pathtokenptr) + 1)] = '\0';
 		if (access(p2, X_OK) == 0)
-			{
-				return(p2);
-			}
+			return(p2);
 		pathtokenptr = strtok(NULL, ":");
 	}
 	return (NULL);
