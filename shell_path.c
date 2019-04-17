@@ -34,7 +34,7 @@ char *pathfinder(char **env)
 		}
 	}
 /*pointer pointing to position 6 of Path string*/
-	pathpointer = (pathpointer + 5)
+	pathpointer = (pathpointer + 5);
 
 /*insert path in buffer*/
 	pathenv = malloc(sizeof(char str) * (strlen(pathpointer) + 1));
