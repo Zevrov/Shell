@@ -22,13 +22,13 @@ int main(int argc, char *argv[], char *envp[])
 	while (1)
 	{
 		write(STDERR_FILENO, "$ ", 2);
-		charCount = getline(&globals.command, &buffsize, stdin);
+		charCount = getline(&global.command, &buffsize, stdin);
 		if (charCount < 0)
 			break;
 		if (buffer[charCount - 1] == '\n')
 			buffer[charCount - 1] = '\0';
-		cmd = vect_array(globals.command, charCount);
-		exitSH(globals.command);
+		cmd = vect_array(global.command, charCount);
+		exitSH(global.command);
 		newpid = fork();
 		if (newpid < 0)
 			perror(argv[0]);
@@ -37,14 +37,14 @@ int main(int argc, char *argv[], char *envp[])
 			path = pathfinder(envp);
 			execve(path, cmd, envp);
 			perror(argv[0]);
-			exit(2);
+			_exit(buffer);
 		}
 		else
 			wait(&status);
 	}
 	if (charCount < 0)
 		write(STDERR_FILENO, "\n", 1);
-	free(globals.command);
+	free(global.command);
 	while (cmd[index])
 	{
 		free(cmd[index]);

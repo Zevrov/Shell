@@ -9,11 +9,12 @@
 #include <string.h>
 #include <signal.h>
 
-typedef struct global
+struct global
 {
-	char *command = NULL;
-} globals;
+	char *command;
+} global;
 
+char *pathfinder(char **env);
 char **vect_array(char *str, ssize_t n);
 void _puts(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);

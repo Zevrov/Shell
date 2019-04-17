@@ -37,11 +37,11 @@ char *pathfinder(char **env)
 	pathtokenptr = strtok(pathenv, ";");
 	while (pathtokenptr != NULL)
 	{
-		p2 = malloc(_strlen(globals.command) + _strlen(pathtokenptr) + 2);
+		p2 = malloc(_strlen(global.command) + _strlen(pathtokenptr) + 2);
 		_strcpy(p2, pathtokenptr);
 		p2[_strlen(pathtokenptr)] = '/';
-		_strncat(p2, globals.command, _strlen(globals.command));
-		p2[strlen(_strlen(globals.command) + _strlen(pathtokenptr) + 1)] = '\0';
+		_strncat(p2, global.command, _strlen(global.command));
+		p2[_strlen(_strlen(global.command) + _strlen(pathtokenptr) + 1)] = '\0';
 		if (access(p2, X_OK) == 0)
 			return(p2);
 		pathtokenptr = strtok(NULL, ":");
