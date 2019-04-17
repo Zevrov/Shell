@@ -10,6 +10,6 @@ void exitSH(char *buffer)
 	if (_strcmp(buffer, x) == 0)
 	{
 		free(buffer);
-		exit(42);
+		exit(98);
 	}
 }
