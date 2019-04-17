@@ -10,5 +10,6 @@
 
 char **vect_array(char *str, ssize_t n);
 void exitSH(char *buffer);
+int _strcmp(char *s1, char *s2);
 
 #endif /* shell */

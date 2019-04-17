@@ -7,7 +7,7 @@ void exitSH(char *buffer)
 {
 	char *x = "exit";
 
-	if (strcmp(buffer, x) == 0)
+	if (_strcmp(buffer, x) == 0)
 	{
 		free(buffer);
 		exit(42);
