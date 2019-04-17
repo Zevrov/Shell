@@ -6,7 +6,7 @@
 int execute(char **args)
 {
 	int i;
-	
+
 	if (args[0] == NULL)
 		return (1);
 
@@ -24,4 +24,3 @@ char *builtin[] = {
 int (*builtin_func[]) (char **) = {
 	&exit
 };
-

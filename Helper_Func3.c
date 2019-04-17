@@ -60,3 +60,57 @@ int _putchar(char c)
 {
         return (write(1, &c, 1));
 }
+/**
+ * _strchr - locates character in a string
+ * @s: string pointer
+ * @c: character to locate in string
+ *
+ * Description: function locates a character in stringr
+ *
+ * Return: value
+ */
+
+char *_strchr(char *s, char c)
+{
+	int x;
+
+	for (x = 0; *(s + x) != '\0'; x++)
+	{
+		if (*(s + x) == c)
+		{
+			return (s + x);
+		}
+	}
+	if (c == '\0')
+	{
+		return (s + x);
+	}
+	return (0);
+
+}
+/**
+ * _strstr - function that locates a substring
+ * @haystack: string pointer
+ * @needle: string to locate in string
+ *
+ * Description: function locates a stringt in a string
+ *
+ * Return: value
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	char *top = haystack;
+	char *point = needle;
+
+	for (; *haystack != '\0'; top++, haystack++)
+	{
+		for (; *point != '\0' && *top == *point; point++, top++)
+			;
+		if (*point == '\0')
+			return (haystack);
+		point = needle;
+		top = haystack;
+
+	}
+	return (0);
+}
