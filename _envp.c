@@ -4,19 +4,18 @@
  * @buffer: the input buffer
  * Return: 0
  */
-int _envp(char *buffer)
+int _envp(char *buffer, char **env)
 {
+	int index = 0;
 	char *x = "env";
-	char **z = environ;
 
 	if (_strcmp(buffer, x) == 0)
 	{
-		while (*z != NULL)
+		while (env[index] != NULL)
 		{
-				write(STDOUT_FILENO, (*z), _strlen(*z));
+				write(STDOUT_FILENO, env[index], _strlen(env[index]));
 				write(STDOUT_FILENO, "\n", 1);
-				z++;
+				index++;
 		}
 	}
-	return (0);
 }

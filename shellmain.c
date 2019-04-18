@@ -28,7 +28,7 @@ int main(int argc, char *argv[], char *envp[])
 		cmd = vect_array(buffer, charCount);
 		/*exitSH(global.command);*/
 		exitSH(buffer);
-		_envp(buffer);
+		_envp(buffer, envp);
 		newpid = fork();
 		if (newpid < 0)
 			perror(argv[0]);

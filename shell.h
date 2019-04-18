@@ -15,7 +15,7 @@ struct global
 } global;
 extern char **environ;
 void _help(char *buffer);
-int _envp(char *buffer);
+int _envp(char *buffer, char **env);
 char *pathfinder(char **env);
 char **vect_array(char *str, ssize_t n);
 void _puts(char *str);
