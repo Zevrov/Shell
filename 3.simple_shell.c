@@ -22,7 +22,7 @@ char **vect_array(char *str, ssize_t n)
 			tokes++;
 		bufPointer++;
 	}
-	args = malloc(sizeof(char *)* (tokes + 1));
+	args = malloc(sizeof(char *) * (tokes + 1));
 	token = strtok(buffer, delim);
 	while (token)
 	{

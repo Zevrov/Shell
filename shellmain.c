@@ -3,6 +3,7 @@
  * main - simple shell
  * @argc: number of args
  * @argv: the args
+ * @envp: the environment
  * Return: always 0
  **/
 

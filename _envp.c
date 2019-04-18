@@ -2,6 +2,7 @@
 /**
  * _envp - prints the environment
  * @buffer: the input buffer
+ * @env: the environment
  * Return: 0
  **/
 int _envp(char *buffer, char **env)

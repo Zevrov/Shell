@@ -9,10 +9,6 @@
 #include <string.h>
 #include <signal.h>
 
-struct global
-{
-		char *command;
-} global;
 extern char **environ;
 void _help(char *buffer);
 int _envp(char *buffer, char **env);

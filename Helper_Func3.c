@@ -58,7 +58,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 int _putchar(char c)
 {
-        return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 /**
  * _strchr - locates character in a string
