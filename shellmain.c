@@ -20,24 +20,23 @@ int main(int argc, char *argv[], char *envp[])
 	while (1)
 	{
 		write(STDERR_FILENO, "$ ", 2);
-		charCount = getline(&global.command, &buffsize, stdin);
+		charCount = getline(&buffer, &buffsize, stdin);
 		if (charCount < 0)
 			break;
 		if (buffer[charCount - 1] == '\n')
 			buffer[charCount - 1] = '\0';
-		cmd = vect_array(global.command, charCount);
-		exitSH(global.command);
+		cmd = vect_array(buffer, charCount);
+		/*exitSH(global.command);*/
+		exitSH(buffer);
+		_envp(buffer);
 		newpid = fork();
 		if (newpid < 0)
 			perror(argv[0]);
 		if (newpid == 0)
 		{
-			path = pathfinder(envp);
+			/*path = pathfinder(envp);*/
 			execve(path, cmd, envp);
 			perror(argv[0]);
-			exitSH(buffer);
-			_envp(buffer, envp);
-			_help(buffer);
 		}
 		else
 			wait(&status);
