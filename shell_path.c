@@ -43,7 +43,7 @@ char *pathfinder(char **env)
 		_strncat(p2, global.command, _strlen(global.command));
 		p2[_strlen(_strlen(global.command) + _strlen(pathtokenptr) + 1)] = '\0';
 		if (access(p2, X_OK) == 0)
-			return(p2);
+			return (p2);
 		pathtokenptr = strtok(NULL, ":");
 	}
 	return (NULL);

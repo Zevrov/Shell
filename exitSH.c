@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * _exit - exits the shell
- * @args: the argument for exit
+ * exitSH - exits the shell
+ * @buffer: the input buffer
  */
 void exitSH(char *buffer)
 {

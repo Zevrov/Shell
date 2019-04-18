@@ -3,22 +3,20 @@
 * main - simple shell
 * @argc: number of args
 * @argv: the args
+* @envp: the envp
 * Return: always 0
 */
 
 int main(int argc, char *argv[], char *envp[])
 {
-	char *buffer = NULL;
+	char *buffer = NULL, *path, **cmd;
 	size_t buffsize = 0;
 	pid_t newpid;
 	ssize_t charCount;
 	int status, index = 0;
-	char **cmd;
-	char *path;
 
 	if (argc < 1)
 		return (-1);
-	
 	while (1)
 	{
 		write(STDERR_FILENO, "$ ", 2);
@@ -38,7 +36,7 @@ int main(int argc, char *argv[], char *envp[])
 			execve(path, cmd, envp);
 			perror(argv[0]);
 			exitSH(buffer);
-			envp(buffer, envp);
+			_envp(buffer, envp);
 		}
 		else
 			wait(&status);
@@ -47,10 +45,7 @@ int main(int argc, char *argv[], char *envp[])
 		write(STDERR_FILENO, "\n", 1);
 	free(global.command);
 	while (cmd[index])
-	{
-		free(cmd[index]);
-		index++;
-	}
+		free(cmd[index++]);
 	free(cmd);
 	return (0);
 }
