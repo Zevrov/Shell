@@ -9,7 +9,7 @@
  * Return: pointer
  */
 
-chat *_strndupp(char *src, unsigned int n)
+char *_strndupp(char *src, unsigned int n)
 {
 	char *duplicate, *srcpointer;
 	unsigned int i, x;

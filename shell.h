@@ -14,6 +14,7 @@ struct global
 	char *command;
 } global;
 
+void _help(char *buffer);
 void _envp(char *buffer, char **env);
 char *pathfinder(char **env);
 char **vect_array(char *str, ssize_t n);

@@ -37,6 +37,7 @@ int main(int argc, char *argv[], char *envp[])
 			perror(argv[0]);
 			exitSH(buffer);
 			_envp(buffer, envp);
+			_help(buffer);
 		}
 		else
 			wait(&status);
