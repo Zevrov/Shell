@@ -18,7 +18,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	if (argc < 1)
 		return (-1);
-
+	
 	while (1)
 	{
 		write(STDERR_FILENO, "$ ", 2);
@@ -37,7 +37,8 @@ int main(int argc, char *argv[], char *envp[])
 			path = pathfinder(envp);
 			execve(path, cmd, envp);
 			perror(argv[0]);
-			_exit(buffer);
+			exitSH(buffer);
+			envp(buffer, envp);
 		}
 		else
 			wait(&status);
