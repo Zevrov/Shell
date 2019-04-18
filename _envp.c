@@ -13,8 +13,8 @@ int _envp(char *buffer, char **env)
 	{
 		while (env[index] != NULL)
 		{
-			write(STDOUT_FILENO, env[index], _strlen(env[index]));
-			write(STDOUT_FILENO, "\n", 1);
+			_puts(env[index]);
+			_putchar('\n');
 			index++;
 		}
 	}

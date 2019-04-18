@@ -25,6 +25,7 @@ int main(int argc, char *argv[], char *envp[])
 		if (buffer[charCount - 1] == '\n')
 			buffer[charCount - 1] = '\0';
 		cmd = vect_array(buffer, charCount);
+		_envp(buffer, envp);
 		exitSH(buffer);
 		newpid = fork();
 		if (newpid < 0)
