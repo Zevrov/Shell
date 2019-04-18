@@ -1,0 +1,80 @@
+.TH "SIMPLE SHELL" 1 "10 April 2019" "Simple Shell"
+.SH NAME
+simple shell \- reads commands received from user, sends commands to kernel to be executed.
+.SH SYNOPSIS
+[\fIoption name\fI [\fIcommand file\fI]
+.TP
+[\fIoption name\fI] \fIcommand string\fI [
+.TP
+[\fIcommand\fI]
+.SH DESCRIPTION
+.B simple shell
+A standard command language interpreter that executes commands read from command line, standars input, or file. . This version has many feature which make it appear similiar to Linux Shell. It is not a Linux clone. 
+.SH Overview
+Simple Shell reads lines from standard input of file.  It interprets the lines into executable command and sends to the kernel.  The kernel executes the commands. Commands can come from a file then executed in the shell or typed into running shell. 
+.SH OPTIONS
+Options are derived from built-in commands.
+.TP
+.BR \ pwd \fR
+Print Working Directory is an environmentatl variable. It stores the path of the curreent directory. It is a built-in command. Use this command to tell you what directory you are currently in. The path starts at the root. Example of the user directory: "home/username"
+.TP
+.BR \ ls -l \fR
+ls is the list command; -l is the option.  This command lists the computer files in the long format.  Included in this list are the the file names, directory, permissions, specifies the number of links, owner of the file, siz of file in bytes and date of last modification.
+.TP
+.BR \ ls \fR
+List command. It lists the files in your current directory.
+.TP
+.BR \ cal \fR
+Calendar command. It shows the current months calendar.
+.TP
+.BR \ exit \fR
+Command used to exit the shell where it is running. It takes one parameter; n. When n is not present it returns sdtatus of last executed command.  Example with parameter: exit [n]
+.TP
+.BR \ env \fR
+Command used to print environment variables. This is a built-in function that prints the current environment.  
+.TP
+.BR
+
+.SH INPUT
+Input files are text files. If input is blank, empty or both, simple_shell will exit with zero exit status. 
+.TP
+.BR
+
+.SH STDIN
+Standard input will be used only with specified options or if an executed command requires input from standard input.
+
+.SH STDERR
+Diagnostic message unless otherwise stated by other utilities needed to execute the command.
+.TP
+.BR
+
+.SH OUTPUT FILES
+None.
+.TP
+.BR
+
+.SH EXIT STATUS
+Unless otherwise specified simple shell will return the exit status of the last executed command.  Syntax errors detected by simple shell cause a non-zero exit status (see STDERR). If command line empty or blank it will return exit zero.
+.TP
+.BR
+
+.SH RETURN VALUE
+Return value of the last executed command. Otherwise no return value.
+.TP
+.BR
+
+.SH HELPER FUNCTIONS
+.B _strlen, _strncopy, _strcpy, _strcmp, _strndupp, _puts, _calloc, _putchar 
+.TP
+.BR
+
+.SH SEE ALSO
+.BR sh(1), man7.org sh(1P), manpages.debian.org.
+
+.SH HISTORY
+Simple Shell created April 2019 a collaborative project from Wolf Hopkins and Mia L. Morton. 
+.BR
+
+.SH BUGS
+This is the first incarnation of Simple Shell. If any bugs please send info to https://github.com/Zevrov or https://github.com/DracoMindz.
+.BR
